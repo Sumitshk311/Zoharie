@@ -2,7 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { FaShoppingBag, FaWhatsapp, FaFacebook, FaInstagram, } from 'react-icons/fa';
 import { FaSquareXTwitter } from "react-icons/fa6";
-import zoharieLogo from "../assets/logo.png"; // Import your logo image
+import zoharieLogo from "../assets/logo.png";
 
 export default function Homepage() {
   return (
@@ -45,13 +45,12 @@ export default function Homepage() {
         src={zoharieLogo}
         alt="Zoharie Logo"
         className="absolute bottom-8 sm:bottom-12 md:bottom-16 lg:bottom-20 max-w-full h-auto object-contain"
-        style={{ maxWidth: '220px' }} // Maximum size for large screens
+        style={{ maxWidth: '220px' }}
         initial={{ opacity: 0, scale: 0.5 }}
         animate={{ opacity: 1, scale: 1 }}
         transition={{ duration: 1 }}
       />
 
-      {/* Social Media Icons */}
       <div className="absolute bottom-4 left-0 right-0 flex justify-center gap-4 sm:gap-6 md:gap-8 lg:gap-10">
         <motion.a
           href="https://facebook.com/zoharieofficial"
@@ -85,29 +84,11 @@ export default function Homepage() {
         >
           <FaInstagram />
         </motion.a>
-
-        {/* <motion.a
-          href="https://linkedin.com"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="bg-blue-700 p-3 rounded-full text-2xl text-white hover:bg-blue-800"
-          whileHover={{ scale: 1.2 }}
-          whileTap={{ scale: 0.9 }}
-        >
-          <FaLinkedin /> */}
-        {/* </motion.a> */}
       </div>
-
-      {/* Background Blur Effects */}
-      <motion.div 
-        className="absolute inset-0 -z-10"
-        animate={{ rotate: 360 }}
-        transition={{ repeat: Infinity, duration: 30, ease: "linear" }}
-      >
         <div className="absolute top-16 left-16 w-24 h-24 bg-pink-500 rounded-full blur-[100px] opacity-50"></div>
         <div className="absolute bottom-24 right-24 w-36 h-36 bg-blue-400 rounded-full blur-[100px] opacity-50"></div>
         <div className="absolute top-1/2 left-1/2 w-48 h-48 bg-green-400 rounded-full blur-[100px] opacity-50 transform -translate-x-1/2 -translate-y-1/2"></div>
-      </motion.div>
+      
     </div>
   );
 }
