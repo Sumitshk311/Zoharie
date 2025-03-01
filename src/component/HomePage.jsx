@@ -1,19 +1,19 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { FaShoppingBag, FaWhatsapp } from 'react-icons/fa';
+import { FaShoppingBag, FaWhatsapp, FaFacebook, FaInstagram, } from 'react-icons/fa';
+import { FaSquareXTwitter } from "react-icons/fa6";
+import zoharieLogo from "../assets/logo.png"; // Import your logo image
 
 export default function Homepage() {
-  const snowflakes = Array.from({ length: 50 }, (_, i) => i);
-
   return (
-    <div className="flex flex-col items-center justify-center h-screen w-screen bg-gradient-to-br from-gray-900 to-gray-700 text-white overflow-hidden">
+    <div className="fixed inset-0 flex flex-col items-center justify-center bg-[#2F2F2F] text-white overflow-hidden">
       <motion.h1 
-        className="text-3xl md:text-5xl font-extrabold mb-8 tracking-widest text-center"
-        initial={{ opacity: 0, y: -50 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 1 }}
+          className="text-4xl md:text-5xl font-extrabold mb-8 tracking-widest text-center font-poppins"
+          initial={{ opacity: 0, y: -50 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1 }}
       >
-        Choose Your Destination
+            Choose Your Destination
       </motion.h1>
 
       <div className="flex gap-8 md:gap-16">
@@ -40,16 +40,65 @@ export default function Homepage() {
         </motion.a>
       </div>
 
-      {snowflakes.map((_, index) => (
-        <motion.div
-          key={index}
-          className="absolute bg-white w-2 h-2 rounded-full opacity-80"
-          initial={{ y: window.innerHeight, x: Math.random() * window.innerWidth }}
-          animate={{ y: -10, x: Math.random() * window.innerWidth }}
-          transition={{ duration: 20 + Math.random() * 10, repeat: Infinity }}
-        />
-      ))}
+      {/* Zoharie Logo */}
+      <motion.img
+        src={zoharieLogo}
+        alt="Zoharie Logo"
+        className="absolute bottom-8 sm:bottom-12 md:bottom-16 lg:bottom-20 max-w-full h-auto object-contain"
+        style={{ maxWidth: '220px' }} // Maximum size for large screens
+        initial={{ opacity: 0, scale: 0.5 }}
+        animate={{ opacity: 1, scale: 1 }}
+        transition={{ duration: 1 }}
+      />
 
+      {/* Social Media Icons */}
+      <div className="absolute bottom-4 left-0 right-0 flex justify-center gap-4 sm:gap-6 md:gap-8 lg:gap-10">
+        <motion.a
+          href="https://facebook.com/zoharieofficial"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="bg-blue-800 p-3 rounded-full text-2xl text-white hover:bg-blue-900"
+          whileHover={{ scale: 1.2 }}
+          whileTap={{ scale: 0.9 }}
+        >
+          <FaFacebook />
+        </motion.a>
+
+        <motion.a
+          href="https://x.com/zoharieofficial"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="bg-black p-3 rounded-full text-2xl text-white"
+          whileHover={{ scale: 1.2 }}
+          whileTap={{ scale: 0.9 }}
+        >
+          <FaSquareXTwitter />
+        </motion.a>
+
+        <motion.a
+          href="https://instagram.com/zoharieofficial"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="bg-pink-500 p-3 rounded-full text-2xl text-white hover:bg-pink-600"
+          whileHover={{ scale: 1.2 }}
+          whileTap={{ scale: 0.9 }}
+        >
+          <FaInstagram />
+        </motion.a>
+
+        {/* <motion.a
+          href="https://linkedin.com"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="bg-blue-700 p-3 rounded-full text-2xl text-white hover:bg-blue-800"
+          whileHover={{ scale: 1.2 }}
+          whileTap={{ scale: 0.9 }}
+        >
+          <FaLinkedin /> */}
+        {/* </motion.a> */}
+      </div>
+
+      {/* Background Blur Effects */}
       <motion.div 
         className="absolute inset-0 -z-10"
         animate={{ rotate: 360 }}
