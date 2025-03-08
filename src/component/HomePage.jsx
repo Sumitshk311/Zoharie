@@ -7,8 +7,23 @@ import zoharieLogo from "../assets/logo.png";
 export default function Homepage() {
   return (
     <div className="fixed inset-0 flex flex-col items-center justify-center bg-[#2F2F2F] text-white overflow-hidden">
-      <motion.h1 
-          className="text-4xl md:text-5xl font-extrabold mb-8 tracking-widest text-center font-poppins"
+      {/* Zoharie Logo */}
+      <motion.img
+        src={zoharieLogo}
+        alt="Zoharie Logo"
+        className="absolute top-8 sm:top-12 md:top-16 lg:top-20 max-w-full h-auto object-contain"
+        style={{
+          maxWidth: "300px",
+          filter: "invert(1) brightness(1.2) contrast(1.5) grayscale(30%)",
+        }}
+          initial={{ opacity: 0, scale: 0.5 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 1 }}
+        />
+
+
+        <motion.h1 
+          className="text-4xl md:text-5xl font-extrabold mb-8 tracking-widest text-center font-['Belleza']"
           initial={{ opacity: 0, y: -50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1 }}
@@ -40,16 +55,6 @@ export default function Homepage() {
         </motion.a>
       </div>
 
-      {/* Zoharie Logo */}
-      <motion.img
-        src={zoharieLogo}
-        alt="Zoharie Logo"
-        className="absolute bottom-8 sm:bottom-12 md:bottom-16 lg:bottom-20 max-w-full h-auto object-contain"
-        style={{ maxWidth: '220px' }}
-        initial={{ opacity: 0, scale: 0.5 }}
-        animate={{ opacity: 1, scale: 1 }}
-        transition={{ duration: 1 }}
-      />
 
       <div className="absolute bottom-4 left-0 right-0 flex justify-center gap-4 sm:gap-6 md:gap-8 lg:gap-10">
         <motion.a
